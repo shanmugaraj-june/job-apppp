@@ -5,14 +5,11 @@ const path = require('path');
 const cors = require('cors')
 const connectDatabase = require("./config/connectDatabase")
 dotenv.config({path  : path.join(__dirname , "config" , "config.env")})
-const crosOptions = {
-    origin : process.env.APPLICATION_URL ,
-    methods :'GET,HEAD,PUT,PATCH,POST,DELETE'
-};
+
 const jobs  = require('./routes/job');
 
 app.use(express.json()) ; 
-app.use(cors(crosOptions)) 
+app.use(cors()) 
 
 
 app.use('/api/v1/', jobs) ; 
