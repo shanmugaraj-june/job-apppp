@@ -8,7 +8,7 @@ const Home  = () => {
     const [jobs ,setJobs] = useState([])  ;
 
     useEffect(() => {
-        fetch(process.env.REACT_APP_API_URL+'/jobs')
+        fetch(process.env.REACT_APP_API_URL+'/api/v1/jobs')
         .then(res => res.json()) 
         .then(res => setJobs(res.jobs))
     },[])
